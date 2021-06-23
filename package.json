@@ -4,11 +4,13 @@
   "license": "MIT",
   "scripts": {
     "nx": "nx",
-    "start": "nx serve",
-    "build": "nx build",
+    "start": "node dist/apps/api/main.js",
+    "start:debug": "node --inspect-brk dist/apps/api/main.js",
+    "build": "nx build api",
     "test": "nx test",
     "lint": "nx workspace-lint && nx lint",
     "e2e": "nx e2e",
+    "postinstall": "npm run api:db:push",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
     "affected:build": "nx affected:build",
@@ -25,8 +27,7 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "api:db:generate": "prisma generate --schema=apps/api/prisma/schema.prisma",
-    "api:db:push": "prisma db push --skip-generate --schema=apps/api/prisma/schema.prisma",
-    "api:db:dev:migrate": "prisma migrate dev --schema=apps/api/prisma/schema.prisma"
+    "api:db:push": "prisma db push --schema=apps/api/prisma/schema.prisma"
   },
   "private": true,
   "dependencies": {
