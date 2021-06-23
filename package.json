@@ -23,13 +23,17 @@
     "update": "nx migrate latest",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "api:db:generate": "prisma generate --schema=apps/api/prisma/schema.prisma",
+    "api:db:push": "prisma db push --skip-generate --schema=apps/api/prisma/schema.prisma",
+    "api:db:dev:migrate": "prisma migrate dev --schema=apps/api/prisma/schema.prisma"
   },
   "private": true,
   "dependencies": {
     "@nestjs/common": "^7.0.0",
     "@nestjs/core": "^7.0.0",
     "@nestjs/platform-express": "^7.0.0",
+    "@prisma/client": "^2.25.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0"
@@ -46,7 +50,7 @@
     "@nrwl/tao": "11.6.3",
     "@nrwl/workspace": "11.6.3",
     "@types/jest": "26.0.8",
-    "@types/node": "14.14.33",
+    "@types/node": "^14.14.33",
     "@typescript-eslint/eslint-plugin": "4.3.0",
     "@typescript-eslint/parser": "4.3.0",
     "dotenv": "8.2.0",
@@ -54,8 +58,9 @@
     "eslint-config-prettier": "8.1.0",
     "jest": "26.2.2",
     "prettier": "2.2.1",
+    "prisma": "^2.25.0",
     "ts-jest": "26.4.0",
-    "ts-node": "~9.1.1",
-    "typescript": "~4.0.3"
+    "ts-node": "^9.1.1",
+    "typescript": "^4.0.8"
   }
 }
