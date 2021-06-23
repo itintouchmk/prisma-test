@@ -37,5 +37,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-apps/api/prisma
+apps/api/prisma/runtime
+apps/api/prisma/dev.db
+apps/api/prisma/index*
+apps/api/prisma/query-engine-darwin
 !apps/api/prisma/schema.prisma
